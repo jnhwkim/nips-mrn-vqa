@@ -1,4 +1,4 @@
-# Multimodal Residual Networks for Visual QA
+# Multimodal Residual Learning for Visual QA (NIPS 2016)
 
 Multimodal residual networks three-block layered model. GRUs initialized with Skip-Thought Vectors for question embedding and ResNet-152 for extracting visual feature vectors are used. Joint representations are learned by element-wise multiplication, which leads to implicit attentional model without attentional parameters. 
 
