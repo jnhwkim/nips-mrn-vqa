@@ -6,7 +6,7 @@ This current code can get **61.84** on Open-Ended and **66.33** on Multiple-Choi
 
 Notice that this code is based on Lu et al (2015)'s [VQA_LSTM_CNN](https://github.com/VT-vision-lab/VQA_LSTM_CNN/blob/master/readme.md). Also, you need to use this base code for preprocessing.
 
-Our latest work can be found in [Hadamard Product for Low-rank Bilinear Pooling](https://arxiv.org/abs/1610.04325), which is the state-of-the-art (Single: *65.07/68.89*, Ensemble: *66.89/70.29* for *test-standard*) as of Dec 1st 2016.
+Our latest work can be found in [Hadamard Product for Low-rank Bilinear Pooling](https://arxiv.org/abs/1610.04325), which is the state-of-the-art (Single: *65.07/68.89*, Ensemble: *66.89/70.29* for *test-standard*) as of Dec 1st 2016. The code for this will be released in [Github](https://github.com/jnhwkim/MulLowBiVQA).
 
 ### Dependencies
 
