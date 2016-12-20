@@ -137,7 +137,7 @@ print('Building the model...')
 
 buffer_size_q=dataset['question']:size()[2]
 
--- skip-thought vectors
+-- Skip-Thought Vectors (Kiros et al., 2015)
 -- lookup = nn.LookupTableMaskZero(vocabulary_size_q, embedding_size_q)
 if opt.num_output == 1000 then lookupfile = 'lookup_fix.t7'
 elseif opt.num_output == 2000 then lookupfile = 'lookup_2k.t7' 
@@ -147,8 +147,8 @@ lookup = torch.load(paths.concat(opt.input_skip, lookupfile))
 assert(lookup.weight:size(1)==vocabulary_size_q+1)  -- +1 for zero
 assert(lookup.weight:size(2)==opt.input_encoding_size)
 gru = torch.load(paths.concat(opt.input_skip, 'gru.t7'))
--- Bayesian GRUs have right dropouts
-bgru = nn.GRU(embedding_size_q, rnn_size_q, false, .25, true)  -- Gal & Ghahramani (2016)
+-- Bayesian GRUs
+bgru = nn.GRU(embedding_size_q, rnn_size_q, false, .25, true)  -- Cho et al. (2014); Gal & Ghahramani (2016)
 skip_params = gru:parameters()
 bgru:migrate(skip_params)
 bgru:trimZero(1)  -- Kim et al. (2016a) https://github.com/Element-Research/rnn#rnn.TrimZero
