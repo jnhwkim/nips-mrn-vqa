@@ -148,10 +148,10 @@ assert(lookup.weight:size(1)==vocabulary_size_q+1)  -- +1 for zero
 assert(lookup.weight:size(2)==opt.input_encoding_size)
 gru = torch.load(paths.concat(opt.input_skip, 'gru.t7'))
 -- Bayesian GRUs have right dropouts
-bgru = nn.GRU(embedding_size_q, rnn_size_q, false, .25, true)
+bgru = nn.GRU(embedding_size_q, rnn_size_q, false, .25, true)  -- Gal & Ghahramani (2016)
 skip_params = gru:parameters()
 bgru:migrate(skip_params)
-bgru:trimZero(1)
+bgru:trimZero(1)  -- Kim et al. (2016a) https://github.com/Element-Research/rnn#rnn.TrimZero
 gru = nil
 collectgarbage()
 
