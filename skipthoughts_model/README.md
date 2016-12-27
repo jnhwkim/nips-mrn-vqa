@@ -4,5 +4,5 @@ You can download the pretrained model for learning from [here](https://drive.goo
 
 Or, please consult with [this](https://github.com/HyeonwooNoh/DPPnet/tree/master/003_skipthoughts_porting) for porting the Skip-Thought Vectors (Kiros et al., 2015) by @HyeonwooNoh.
 
-- gru.t7 (332NB)
-- lookup_2k.t7 (142MB)
+- gru.t7 (332 MB)
+- lookup_2k.t7 (142 MB)
